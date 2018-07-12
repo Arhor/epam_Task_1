@@ -1,0 +1,17 @@
+# TYPE base of toy price
+CAR=15
+DOLL=11
+CUBE=2
+BALL=3
+
+# SIZE multiplies the price
+
+SMALL=1
+MEDIUM=1.5
+LARGE=2
+
+#COLOR additional to price
+
+RED=3
+GREEN=5
+BLUE=7
