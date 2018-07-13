@@ -14,12 +14,16 @@ public class Main {
         System.out.print("Введите размер денежной суммы: ");
         try {
             pr = new Playroom(Double.parseDouble(scanner.nextLine()));
+            if (pr.isEmpty()) {
+                System.out.println("Недостаточно средств для заполнения игровой комнаты");
+            } else {
+                System.out.println("Игрушек в комнате: " + pr.getToysAmount());
+            }
         } catch (NumberFormatException e) {
-            System.out.println("Неверный формат, игровая комната будет наполнена" +
-                    " в соответствии со стандартным бюджетом");
+            System.out.println("Неверный формат, игровая комната будет наполнена автоматически");
             pr = new Playroom();
         }
-        while (true) {
+        while (!pr.isEmpty()) {
             System.out.print("> ");
             switch (scanner.nextLine()) {
                 case "1":
@@ -36,10 +40,10 @@ public class Main {
                     PlayroomFilter.findToys(pr, scanner.nextLine());
                     break;
                 case "4":
-                    System.out.println(pr.getTotalPrice());
+                    System.out.println("Общая стоимость игрушек: " + pr.getTotalPrice());
                     break;
                 case "5":
-                    System.out.println(pr.getCurrency());
+                    System.out.println("Остаток денежных средств: " + pr.getCurrency());
                     break;
                 case "h":
                     Playroom.help();

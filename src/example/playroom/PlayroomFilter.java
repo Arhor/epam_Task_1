@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 public abstract class PlayroomFilter {
 
+    /* Список допустимых параметров поиска */
     private static ArrayList<String> validParams;
 
     public static void findToys(Playroom playroom, String params) {

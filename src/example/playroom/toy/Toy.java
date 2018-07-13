@@ -7,11 +7,15 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class Toy {
+
     private static HashMap<String, Double> prices;
+
     private double price;
 
     private Size size;
+
     private Type type;
+
     private Color color;
 
     public Toy() {
@@ -68,16 +72,32 @@ public class Toy {
         return String.format("%6s %5s %4s - its price is %.1f", this.size, this.color, this.type, this.getPrice());
     }
 
-    public Size getSize() {
-        return this.size;
+    public static class SizeComparator implements Comparator<Toy> {
+        @Override
+        public int compare(Toy one, Toy two) {
+            return one.size.compareTo(two.size);
+        }
     }
 
-    public Type getType() {
-        return this.type;
+    public static class TypeComparator implements Comparator<Toy> {
+        @Override
+        public int compare(Toy one, Toy two) {
+            return one.type.compareTo(two.type);
+        }
     }
 
-    public Color getColor() {
-        return this.color;
+    public static class ColorComparator implements Comparator<Toy> {
+        @Override
+        public int compare(Toy one, Toy two) {
+            return one.color.compareTo(two.color);
+        }
+    }
+
+    public static class PriceComparator implements Comparator<Toy> {
+        @Override
+        public int compare(Toy one, Toy two) {
+            return (int)(one.getPrice() - two.getPrice());
+        }
     }
 
     private enum Size {
@@ -88,34 +108,6 @@ public class Toy {
     }
     private enum Color {
         RED, GREEN, BLUE
-    }
-
-    public static class SizeComparator implements Comparator<Toy> {
-        @Override
-        public int compare(Toy one, Toy two) {
-            return one.getSize().compareTo(two.getSize());
-        }
-    }
-
-    public static class TypeComparator implements Comparator<Toy> {
-        @Override
-        public int compare(Toy one, Toy two) {
-            return one.getType().compareTo(two.getType());
-        }
-    }
-
-    public static class ColorComparator implements Comparator<Toy> {
-        @Override
-        public int compare(Toy one, Toy two) {
-            return one.getColor().compareTo(two.getColor());
-        }
-    }
-
-    public static class PriceComparator implements Comparator<Toy> {
-        @Override
-        public int compare(Toy one, Toy two) {
-            return (int)(one.getPrice() - two.getPrice());
-        }
     }
 
     static {
@@ -131,7 +123,7 @@ public class Toy {
                 }
             }
         } catch (FileNotFoundException e) {
-            System.err.println(e); // файл не обнаружен!!! TODO: реализовать цены по-умолчанию
+            e.printStackTrace();
         }
     }
 }

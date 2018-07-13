@@ -5,8 +5,11 @@ import java.util.Comparator;
 import example.playroom.toy.Toy;
 
 public class Playroom {
+
     ArrayList<Toy> toys = new ArrayList<>();
+
     private double currency;
+
     private double totalPrice;
 
     public Playroom(double currency) {
@@ -29,6 +32,14 @@ public class Playroom {
         toys.add(toy);
         this.currency -= toy.getPrice();
         this.totalPrice += toy.getPrice();
+    }
+
+    public boolean isEmpty() {
+        return this.toys.isEmpty();
+    }
+
+    public int getToysAmount() {
+        return this.toys.size();
     }
 
     public double getCurrency() {
