@@ -36,8 +36,11 @@ public class Main {
                     pr.sortBy(scanner.nextLine());
                     break;
                 case "3":
-                    System.out.println("Введите параметры поиска через пробел: " +
-                            "size, type, color");
+                    System.out.println("допустимые параметры сортировки:\n" +
+                            "\tпо размеру: small, medium, large\n" +
+                            "\tпо типу: car, doll, cube, ball\n" +
+                            "\tпо цвету: red, green, blue");
+                    System.out.println("Введите параметры поиска через пробел: ");
                     System.out.print("> ");
                     PlayroomFilter.findToys(pr, scanner.nextLine());
                     break;

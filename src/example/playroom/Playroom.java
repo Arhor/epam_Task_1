@@ -12,6 +12,11 @@ public class Playroom {
 
     private double totalPrice;
 
+    /*
+     * Конструктор в качестве параметра принимает кол-во выделенных средств
+     * и наполняет комнату случайными игрушками до тех пор, пока выделенная
+     * сумма не закончится
+     */
     public Playroom(double currency) {
         this.currency = currency;
         while (true) {
@@ -28,6 +33,10 @@ public class Playroom {
         this(500);
     }
 
+    /*
+     * Метод добавляет игрушку в игровую комнату, вычитает её стоимость
+     * из выделенных средств, и добавляет её к общей стоимости игрушек
+     */
     private void addToy(Toy toy) {
         toys.add(toy);
         this.currency -= toy.getPrice();
@@ -50,12 +59,20 @@ public class Playroom {
         return totalPrice;
     }
 
+    /*
+     * Метод выводит в консоль список игрушек в комнате
+     */
     public void getToys() {
         for (Toy t : toys) {
             System.out.println(t.toString());
         }
     }
 
+    /*
+     * Метод принимает в качестве параметра строку, и, если она является
+     * допустимым параметром, прозводит сортировку коллекции с игрушками
+     * используя соответствующий компаратор
+     */
     public void sortBy(String arg) {
         Comparator<Toy> comp = null;
         switch(arg.toUpperCase()) {
