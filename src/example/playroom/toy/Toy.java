@@ -18,6 +18,7 @@ public class Toy {
 
     private Color color;
 
+    /* конструктор случайным образом определяет параметры текущей игрушки */
     public Toy() {
         int s = (int)(Math.random() * 3 + 1);
         int t = (int)(Math.random() * 4 + 1);
@@ -58,8 +59,10 @@ public class Toy {
         this.setPrice();
     }
 
+    /* цена имеет вид (type * size + color) */
     private void setPrice() {
-        this.price = prices.get(this.type.toString()) * prices.get(this.size.toString())
+        this.price = prices.get(this.type.toString())
+                * prices.get(this.size.toString())
                 + prices.get(this.color.toString());
     }
 
@@ -69,8 +72,11 @@ public class Toy {
 
     @Override
     public String toString() {
-        return String.format("%6s %5s %4s - its price is %.1f", this.size, this.color, this.type, this.getPrice());
+        return String.format("%6s %5s %4s - its price is %.1f",
+                this.size, this.color, this.type, this.getPrice());
     }
+
+    /* реализация компараторов для сравнения игрушек по разным параметрам */
 
     public static class SizeComparator implements Comparator<Toy> {
         @Override
@@ -110,6 +116,13 @@ public class Toy {
         RED, GREEN, BLUE
     }
 
+    /*
+     * статический блок логики
+     * при создании первой игрушки производится попытка получить доступ
+     * к файлу "prices.txt", содержащему список цен для заполения
+     * хэш-карты, на основании которой впоследствии определяются цены
+     * для каждой созданной игрушки
+     */
     static {
         prices = new HashMap<>();
         File file = new File("prices.txt");

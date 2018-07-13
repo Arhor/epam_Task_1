@@ -9,6 +9,12 @@ public abstract class PlayroomFilter {
     /* Список допустимых параметров поиска */
     private static ArrayList<String> validParams;
 
+    /*
+     * метод findToys в качестве параметров принимает объект класса Playroom
+     * и строку с параметрами, по которым следует произвести поиск. Каждый
+     * параметр выделяется в виде отдельной строки, которая проверяется на
+     * соответствие списку допустимых параметров.
+     */
     public static void findToys(Playroom playroom, String params) {
         ArrayList<Toy> filtered = new ArrayList<>(playroom.toys);
         String[] filters = params.toUpperCase().split(" ");
@@ -20,8 +26,8 @@ public abstract class PlayroomFilter {
         }
         for (String filter : filters) {
             filtered = (ArrayList<Toy>) filtered.stream()
-                                                .filter(toy -> toy.toString().contains(filter))
-                                                .collect(Collectors.toList());
+                    .filter(toy -> toy.toString().contains(filter))
+                    .collect(Collectors.toList());
         }
         for (Toy toy : filtered) {
             System.out.println(toy.toString());
