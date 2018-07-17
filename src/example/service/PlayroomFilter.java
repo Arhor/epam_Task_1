@@ -11,7 +11,6 @@ package example.service;
 
 import example.model.Playroom;
 import example.model.toy.*;
-
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -26,7 +25,7 @@ public abstract class PlayroomFilter {
         String[] filters = params.toUpperCase().split(" ");
         for (String filter : filters) {
             if (!validParams.contains(filter)) {
-                System.out.println("Invalid parameter: " + filter);
+                wrongParamMessage();
                 return;
             }
         }
@@ -38,9 +37,9 @@ public abstract class PlayroomFilter {
         showToys(filtered);
     }
 
-    public static void sortBy(List<Toy> toys, String arg) {
+    public static void sortBy(List<Toy> toys, String param) {
         Comparator<Toy> comp = null;
-        switch(arg.toUpperCase()) {
+        switch(param.toUpperCase()) {
             case "SIZE":
                 comp = new SizeComparator();
                 break;
@@ -54,12 +53,20 @@ public abstract class PlayroomFilter {
                 comp = new PriceComparator();
                 break;
             default:
-                System.out.println("wrong parameter");
+                wrongParamMessage(param);
         }
         if (comp != null) {
             toys.sort(comp);
             showToys(toys);
         }
+    }
+
+    private static void wrongParamMessage() {
+        System.out.println("wrong parameter");
+    }
+
+    private static void wrongParamMessage(String param) {
+        System.out.println("wrong parameter: " + param);
     }
 
     public static void showToys(List<Toy> toys) {

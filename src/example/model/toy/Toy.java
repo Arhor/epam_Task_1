@@ -27,7 +27,6 @@ public class Toy {
 
     private Color color;
 
-    /* цена имеет вид (type * size + color) */
     private void setPrice() {
         this.price = prices.get(this.type.toString())
                 * prices.get(this.size.toString())
@@ -100,7 +99,7 @@ public class Toy {
                 + ", color: " + getColor()
                 + ", price: " + getPrice();
     }
-    
+
     static {
         prices = new HashMap<>();
         File file = new File("prices.txt");

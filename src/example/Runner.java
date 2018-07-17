@@ -2,7 +2,6 @@ package example;
 
 import example.model.Playroom;
 import example.service.PlayroomFilter;
-
 import java.util.Scanner;
 
 public class Runner {
@@ -10,22 +9,21 @@ public class Runner {
     public static void main(String[] args) {
 	    Playroom pr;
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите размер денежной суммы: ");
+        System.out.print("Enter money sum, that will be used to" +
+                " fill the playroom: ");
         try {
             pr = new Playroom(Double.parseDouble(scanner.nextLine()));
-            pr.buyToys();
-            if (pr.isEmpty()) {
-                System.out.println("Недостаточно средств для заполнения " +
-                        "игровой комнаты");
-                return;
-            } else {
-                System.out.println("Игрушек в комнате: " + pr.getToysAmount());
-            }
         } catch (NumberFormatException e) {
             System.out.println("Wrong number format, playroom will be " +
                     "filled automatically");
             pr = new Playroom();
         }
+        pr.buyToys();
+        if (pr.isEmpty()) {
+            System.out.println("There is not enough money to buy toys");
+            return;
+        }
+        System.out.println("Toys in the playroom: " + pr.getToysAmount());
         help();
         while (!pr.isEmpty()) {
             System.out.print("> ");
@@ -44,16 +42,15 @@ public class Runner {
                             "\tsize: small, medium, large\n" +
                             "\ttype: car, doll, cube, ball\n" +
                             "\tcolor: red, green, blue");
-                    System.out.println("Введите параметры поиска через пробел: ");
                     System.out.print("> ");
                     PlayroomFilter.findToys(pr, scanner.nextLine());
                     break;
                 case "4":
-                    System.out.println("Общая стоимость игрушек: "
+                    System.out.println("Total cost of toys in playroom: "
                             + pr.getTotalPrice());
                     break;
                 case "5":
-                    System.out.println("Остаток денежных средств: "
+                    System.out.println("Cash balance: "
                             + pr.getCurrency());
                     break;
                 case "h":
@@ -67,13 +64,13 @@ public class Runner {
         }
     }
 
-    static void help() {
+    private static void help() {
         System.out.println("Type one of the following commands and press ENTER:\n" +
                 "\t1 - list of toys in the playroom\n" +
                 "\t2 - sort toys\n" +
                 "\t3 - find toys\n" +
                 "\t4 - get total cost of the toys\n" +
-                "\t5 - просмотреть остаток денежных средств\n" +
+                "\t5 - get cash balance\n" +
                 "\th - help\n" +
                 "\tq - exit");
     }
