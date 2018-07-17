@@ -1,13 +1,26 @@
-package example.playroom;
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ */
 
-import example.playroom.toy.Toy;
+package example.service;
+
+import example.model.Playroom;
+import example.model.toy.*;
+
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class PlayroomFilter {
 
     /* Список допустимых параметров поиска */
-    private static ArrayList<String> validParams;
+    private static List<String> validParams;
 
     /*
      * метод findToys в качестве параметров принимает объект класса Playroom
@@ -16,7 +29,7 @@ public abstract class PlayroomFilter {
      * соответствие списку допустимых параметров.
      */
     public static void findToys(Playroom playroom, String params) {
-        ArrayList<Toy> filtered = new ArrayList<>(playroom.toys);
+        ArrayList<Toy> filtered = new ArrayList<>(playroom.getToys());
         String[] filters = params.toUpperCase().split(" ");
         for (String filter : filters) {
             if (!validParams.contains(filter)) {
@@ -29,8 +42,36 @@ public abstract class PlayroomFilter {
                     .filter(toy -> toy.toString().contains(filter))
                     .collect(Collectors.toList());
         }
-        for (Toy toy : filtered) {
-            System.out.println(toy.toString());
+        showToys(filtered);
+    }
+
+    public static void sortBy(List<Toy> toys, String arg) {
+        Comparator<Toy> comp = null;
+        switch(arg.toUpperCase()) {
+            case "SIZE":
+                comp = new SizeComparator();
+                break;
+            case "TYPE":
+                comp = new TypeComparator();
+                break;
+            case "COLOR":
+                comp = new ColorComparator();
+                break;
+            case "PRICE":
+                comp = new PriceComparator();
+                break;
+            default:
+                System.out.println("wrong parameter");
+        }
+        if (comp != null) {
+            toys.sort(comp);
+            showToys(toys);
+        }
+    }
+
+    public static void showToys(List<Toy> toys) {
+        for (Toy toy : toys) {
+            System.out.println(toy);
         }
     }
 

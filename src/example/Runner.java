@@ -1,45 +1,49 @@
 package example;
 
-import example.playroom.*;
+import example.model.Playroom;
+import example.model.toy.Toy;
+import example.service.PlayroomFilter;
+
 import java.util.Scanner;
 
-public class Main {
+public class Runner {
 
     public static void main(String[] args) {
 	    Playroom pr;
         Scanner scanner = new Scanner(System.in);
-        Playroom.help();
         System.out.print("Введите размер денежной суммы: ");
         try {
             pr = new Playroom(Double.parseDouble(scanner.nextLine()));
             if (pr.isEmpty()) {
                 System.out.println("Недостаточно средств для заполнения " +
                         "игровой комнаты");
+                return;
             } else {
                 System.out.println("Игрушек в комнате: " + pr.getToysAmount());
             }
         } catch (NumberFormatException e) {
-            System.out.println("Неверный формат, игровая комната будет " +
-                    "наполнена автоматически");
+            System.out.println("Wrong number format, playroom will be " +
+                    "filled automatically");
             pr = new Playroom();
         }
+        help();
         while (!pr.isEmpty()) {
             System.out.print("> ");
             switch (scanner.nextLine()) {
                 case "1":
-                    pr.getToys();
+                    PlayroomFilter.showToys(pr.getToys());
                     break;
                 case "2":
-                    System.out.println("Введите параметр сортировки: " +
+                    System.out.println("parameters to sort toys by: " +
                             "size, type, color, price");
                     System.out.print("> ");
-                    pr.sortBy(scanner.nextLine());
+                    PlayroomFilter.sortBy(pr.getToys(), scanner.nextLine());
                     break;
                 case "3":
-                    System.out.println("допустимые параметры сортировки:\n" +
-                            "\tпо размеру: small, medium, large\n" +
-                            "\tпо типу: car, doll, cube, ball\n" +
-                            "\tпо цвету: red, green, blue");
+                    System.out.println("parameters to find toys by:\n" +
+                            "\tsize: small, medium, large\n" +
+                            "\ttype: car, doll, cube, ball\n" +
+                            "\tcolor: red, green, blue");
                     System.out.println("Введите параметры поиска через пробел: ");
                     System.out.print("> ");
                     PlayroomFilter.findToys(pr, scanner.nextLine());
@@ -53,13 +57,24 @@ public class Main {
                             + pr.getCurrency());
                     break;
                 case "h":
-                    Playroom.help();
+                    help();
                     break;
                 case "q":
                     return;
                 default:
-                    System.out.println("неверная команда...");
+                    System.out.println("invalid command...");
             }
         }
+    }
+
+    static void help() {
+        System.out.println("Type one of the following commands and press ENTER:\n" +
+                "\t1 - list of toys in the playroom\n" +
+                "\t2 - sort toys\n" +
+                "\t3 - find toys\n" +
+                "\t4 - get total cost of the toys\n" +
+                "\t5 - просмотреть остаток денежных средств\n" +
+                "\th - help\n" +
+                "\tq - exit");
     }
 }

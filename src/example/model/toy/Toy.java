@@ -1,14 +1,23 @@
-package example.playroom.toy;
+/*
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+package example.model.toy;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Toy {
 
-    private static HashMap<String, Double> prices;
+    private static Map<String, Double> prices;
 
     private double price;
 
@@ -70,50 +79,25 @@ public class Toy {
         return this.price;
     }
 
+    public Size getSize() {
+        return this.size;
+    }
+
+    public Type getType() {
+        return this.type;
+    }
+
+    public Color getColor() {
+        return this.color;
+    }
+
     @Override
     public String toString() {
-        return String.format("%6s %5s %4s - its price is %.1f",
-                this.size, this.color, this.type, this.getPrice());
-    }
-
-    /* реализация компараторов для сравнения игрушек по разным параметрам */
-
-    public static class SizeComparator implements Comparator<Toy> {
-        @Override
-        public int compare(Toy one, Toy two) {
-            return one.size.compareTo(two.size);
-        }
-    }
-
-    public static class TypeComparator implements Comparator<Toy> {
-        @Override
-        public int compare(Toy one, Toy two) {
-            return one.type.compareTo(two.type);
-        }
-    }
-
-    public static class ColorComparator implements Comparator<Toy> {
-        @Override
-        public int compare(Toy one, Toy two) {
-            return one.color.compareTo(two.color);
-        }
-    }
-
-    public static class PriceComparator implements Comparator<Toy> {
-        @Override
-        public int compare(Toy one, Toy two) {
-            return (int)(one.getPrice() - two.getPrice());
-        }
-    }
-
-    private enum Size {
-        SMALL, MEDIUM, LARGE
-    }
-    private enum Type {
-        CAR, DOLL, CUBE, BALL
-    }
-    private enum Color {
-        RED, GREEN, BLUE
+        return getClass().getSimpleName() + "@"
+                + "size: " + getSize()
+                + ", type: " + getType()
+                + ", color: " + getColor()
+                + ", price: " + getPrice();
     }
 
     /*
