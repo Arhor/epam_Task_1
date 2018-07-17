@@ -22,15 +22,17 @@ public class Playroom {
 
     private double totalPrice;
 
-    /*
-     * Конструктор в качестве параметра принимает кол-во выделенных средств
-     * и наполняет комнату случайными игрушками до тех пор, пока выделенная
-     * сумма не закончится
-     */
     public Playroom(double currency) {
         this.currency = currency;
+    }
+
+    public Playroom() {
+        this(500);
+    }
+
+    public void buyToys() {
         while (true) {
-            Toy toy = new Toy();
+            Toy toy = Toy.createToy();
             if (this.currency >= toy.getPrice()) {
                 this.addToy(toy);
             } else {
@@ -39,14 +41,6 @@ public class Playroom {
         }
     }
 
-    public Playroom() {
-        this(500);
-    }
-
-    /*
-     * Метод добавляет игрушку в игровую комнату, вычитает её стоимость
-     * из выделенных средств, и добавляет её к общей стоимости игрушек
-     */
     private void addToy(Toy toy) {
         toys.add(toy);
         this.currency -= toy.getPrice();

@@ -19,15 +19,8 @@ import java.util.stream.Collectors;
 
 public abstract class PlayroomFilter {
 
-    /* Список допустимых параметров поиска */
     private static List<String> validParams;
 
-    /*
-     * метод findToys в качестве параметров принимает объект класса Playroom
-     * и строку с параметрами, по которым следует произвести поиск. Каждый
-     * параметр выделяется в виде отдельной строки, которая проверяется на
-     * соответствие списку допустимых параметров.
-     */
     public static void findToys(Playroom playroom, String params) {
         ArrayList<Toy> filtered = new ArrayList<>(playroom.getToys());
         String[] filters = params.toUpperCase().split(" ");

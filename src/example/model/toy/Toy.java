@@ -27,47 +27,6 @@ public class Toy {
 
     private Color color;
 
-    /* конструктор случайным образом определяет параметры текущей игрушки */
-    public Toy() {
-        int s = (int)(Math.random() * 3 + 1);
-        int t = (int)(Math.random() * 4 + 1);
-        int c = (int)(Math.random() * 3 + 1);
-        switch (t) {
-            case 1:
-                this.type = Type.CAR;
-                break;
-            case 2:
-                this.type = Type.DOLL;
-                break;
-            case 3:
-                this.type = Type.CUBE;
-                break;
-            case 4:
-                this.type = Type.BALL;
-        }
-        switch (s) {
-            case 1:
-                this.size = Size.SMALL;
-                break;
-            case 2:
-                this.size = Size.MEDIUM;
-                break;
-            case 3:
-                this.size = Size.LARGE;
-        }
-        switch (c) {
-            case 1:
-                this.color = Color.RED;
-                break;
-            case 2:
-                this.color = Color.GREEN;
-                break;
-            case 3:
-                this.color = Color.BLUE;
-        }
-        this.setPrice();
-    }
-
     /* цена имеет вид (type * size + color) */
     private void setPrice() {
         this.price = prices.get(this.type.toString())
@@ -75,20 +34,62 @@ public class Toy {
                 + prices.get(this.color.toString());
     }
 
+    Size getSize() {
+        return this.size;
+    }
+
+    Type getType() {
+        return this.type;
+    }
+
+    Color getColor() {
+        return this.color;
+    }
+
     public double getPrice() {
         return this.price;
     }
 
-    public Size getSize() {
-        return this.size;
-    }
-
-    public Type getType() {
-        return this.type;
-    }
-
-    public Color getColor() {
-        return this.color;
+    public static Toy createToy() {
+        Toy toy = new Toy();
+        int s = (int)(Math.random() * 3 + 1);
+        int t = (int)(Math.random() * 4 + 1);
+        int c = (int)(Math.random() * 3 + 1);
+        switch (t) {
+            case 1:
+                toy.type = Type.CAR;
+                break;
+            case 2:
+                toy.type = Type.DOLL;
+                break;
+            case 3:
+                toy.type = Type.CUBE;
+                break;
+            case 4:
+                toy.type = Type.BALL;
+        }
+        switch (s) {
+            case 1:
+                toy.size = Size.SMALL;
+                break;
+            case 2:
+                toy.size = Size.MEDIUM;
+                break;
+            case 3:
+                toy.size = Size.LARGE;
+        }
+        switch (c) {
+            case 1:
+                toy.color = Color.RED;
+                break;
+            case 2:
+                toy.color = Color.GREEN;
+                break;
+            case 3:
+                toy.color = Color.BLUE;
+        }
+        toy.setPrice();
+        return toy;
     }
 
     @Override
@@ -99,14 +100,7 @@ public class Toy {
                 + ", color: " + getColor()
                 + ", price: " + getPrice();
     }
-
-    /*
-     * статический блок логики
-     * при создании первой игрушки производится попытка получить доступ
-     * к файлу "prices.txt", содержащему список цен для заполения
-     * хэш-карты, на основании которой впоследствии определяются цены
-     * для каждой созданной игрушки
-     */
+    
     static {
         prices = new HashMap<>();
         File file = new File("prices.txt");

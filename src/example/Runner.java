@@ -1,7 +1,6 @@
 package example;
 
 import example.model.Playroom;
-import example.model.toy.Toy;
 import example.service.PlayroomFilter;
 
 import java.util.Scanner;
@@ -14,6 +13,7 @@ public class Runner {
         System.out.print("Введите размер денежной суммы: ");
         try {
             pr = new Playroom(Double.parseDouble(scanner.nextLine()));
+            pr.buyToys();
             if (pr.isEmpty()) {
                 System.out.println("Недостаточно средств для заполнения " +
                         "игровой комнаты");
