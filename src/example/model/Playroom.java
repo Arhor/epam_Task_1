@@ -28,21 +28,18 @@ public class Playroom {
         this(500);
     }
 
+    // adding toys to the playroom while there is enough cash
     public void buyToys() {
         while (true) {
-            Toy toy = Toy.createToy();
+            Toy toy = Toy.getInstance();
             if (this.currency >= toy.getPrice()) {
-                this.addToy(toy);
+                toys.add(toy);
+                this.currency -= toy.getPrice();
+                this.totalPrice += toy.getPrice();
             } else {
                 break;
             }
         }
-    }
-
-    private void addToy(Toy toy) {
-        toys.add(toy);
-        this.currency -= toy.getPrice();
-        this.totalPrice += toy.getPrice();
     }
 
     public boolean isEmpty() {

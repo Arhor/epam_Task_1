@@ -15,10 +15,17 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+ * Class PlayroomFilter provides methods to find and sort toys
+ * that contains object of Playroom class, also allowing to see
+ * list of all toys in the room
+ */
+
 public abstract class PlayroomFilter {
 
     private static List<String> validParams;
 
+    // method find all toys, that satisfied list of parameters
     public static void findToys(Playroom playroom, String params) {
         ArrayList<Toy> filtered = new ArrayList<>(playroom.getToys());
         String[] filters = params.toUpperCase().split(" ");
@@ -36,6 +43,10 @@ public abstract class PlayroomFilter {
         showToys(filtered);
     }
 
+    /*
+     * method sorts collection of toys in the given playroom using
+     * corresponding comparator
+     */
     public static void sortBy(List<Toy> toys, String param) {
         Comparator<Toy> comp = null;
         switch(param.toUpperCase()) {
@@ -60,18 +71,19 @@ public abstract class PlayroomFilter {
         }
     }
 
+    // prints list of toys in the room
+    public static void showToys(List<Toy> toys) {
+        for (Toy toy : toys) {
+            System.out.println(toy);
+        }
+    }
+
     private static void wrongParamMessage() {
         System.out.println("wrong parameter");
     }
 
     private static void wrongParamMessage(String param) {
         System.out.println("wrong parameter: " + param);
-    }
-
-    public static void showToys(List<Toy> toys) {
-        for (Toy toy : toys) {
-            System.out.println(toy);
-        }
     }
 
     static {

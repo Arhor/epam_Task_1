@@ -26,6 +26,9 @@ public class Toy {
 
     private Color color;
 
+    private Toy() {}
+
+    // calculates the price in the following way: type * size + color
     private void setPrice() {
         this.price = prices.get(this.type.toString())
                 * prices.get(this.size.toString())
@@ -48,7 +51,8 @@ public class Toy {
         return this.price;
     }
 
-    public static Toy createToy() {
+    // returns instance of Toy class with randomly initialized fields
+    public static Toy getInstance() {
         Toy toy = new Toy();
         int s = (int)(Math.random() * 3 + 1);
         int t = (int)(Math.random() * 4 + 1);
@@ -99,6 +103,11 @@ public class Toy {
                 + ", price: " + getPrice();
     }
 
+    /*
+     *  at the moment of first instantiation Toy object, following block
+     *  tries to read prices from "priced.txt" file and add them
+     *  to static hash-map "prices"
+     */
     static {
         prices = new HashMap<>();
         File file = new File("prices.txt");
