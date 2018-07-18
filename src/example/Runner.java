@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Runner {
 
     public static void main(String[] args) {
-	    Playroom pr;
+        Playroom pr;
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter money sum, that will be used to" +
                 " fill the playroom: ");
