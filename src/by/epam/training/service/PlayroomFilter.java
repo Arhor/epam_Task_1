@@ -10,6 +10,10 @@ package by.epam.training.service;
 
 import by.epam.training.model.Playroom;
 import by.epam.training.model.toy.*;
+import by.epam.training.model.toy.comparsion.ColorComparator;
+import by.epam.training.model.toy.comparsion.PriceComparator;
+import by.epam.training.model.toy.comparsion.SizeComparator;
+import by.epam.training.model.toy.comparsion.TypeComparator;
 
 import java.util.ArrayList;
 import java.util.Comparator;

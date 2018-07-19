@@ -6,7 +6,9 @@
  * author: Maxim Burishinets
  */
 
-package by.epam.training.model.toy;
+package by.epam.training.model.toy.comparsion;
+
+import by.epam.training.model.toy.Toy;
 
 import java.util.Comparator;
 

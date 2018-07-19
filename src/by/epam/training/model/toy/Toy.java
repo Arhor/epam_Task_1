@@ -35,15 +35,15 @@ public class Toy {
                 + prices.get(this.color.toString());
     }
 
-    Size getSize() {
+    public Size getSize() {
         return this.size;
     }
 
-    Type getType() {
+    public Type getType() {
         return this.type;
     }
 
-    Color getColor() {
+    public Color getColor() {
         return this.color;
     }
 
