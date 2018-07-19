@@ -1,4 +1,4 @@
-package example;
+package example.runner;
 
 import example.model.Playroom;
 import example.service.PlayroomFilter;
