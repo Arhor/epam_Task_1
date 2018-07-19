@@ -1,7 +1,7 @@
-package example.runner;
+package by.epam.training.runner;
 
-import example.model.Playroom;
-import example.service.PlayroomFilter;
+import by.epam.training.model.Playroom;
+import by.epam.training.service.PlayroomFilter;
 import java.util.Scanner;
 
 public class Runner {

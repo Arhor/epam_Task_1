@@ -6,7 +6,7 @@
  * author: Maxim Burishinets
  */
 
-package example.model.toy;
+package by.epam.training.model.toy;
 
 import java.io.File;
 import java.io.FileNotFoundException;

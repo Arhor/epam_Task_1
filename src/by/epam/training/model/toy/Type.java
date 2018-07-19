@@ -6,7 +6,7 @@
  * author: Maxim Burishinets
  */
 
-package example.model.toy;
+package by.epam.training.model.toy;
 
 public enum Type {
     CAR, DOLL, CUBE, BALL

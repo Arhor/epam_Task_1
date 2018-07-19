@@ -6,7 +6,7 @@
  * author: Maxim Burishinets
  */
 
-package example.model.toy;
+package by.epam.training.model.toy;
 
 public enum Size {
     SMALL, MEDIUM, LARGE

@@ -6,11 +6,12 @@
  * author: Maxim Burishinets
  */
 
-package example.model;
+package by.epam.training.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import example.model.toy.*;
+
+import by.epam.training.model.toy.Toy;
 
 public class Playroom {
 

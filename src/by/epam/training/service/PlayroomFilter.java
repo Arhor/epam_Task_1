@@ -6,10 +6,11 @@
  * author: Maxim Burishinets
  */
 
-package example.service;
+package by.epam.training.service;
 
-import example.model.Playroom;
-import example.model.toy.*;
+import by.epam.training.model.Playroom;
+import by.epam.training.model.toy.*;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
