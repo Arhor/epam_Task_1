@@ -15,6 +15,8 @@ import by.epam.training.model.toy.comparsion.PriceComparator;
 import by.epam.training.model.toy.comparsion.SizeComparator;
 import by.epam.training.model.toy.comparsion.TypeComparator;
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -27,6 +29,8 @@ import java.util.stream.Collectors;
  */
 
 public abstract class PlayroomFilter {
+
+    private static final Logger logger = Logger.getLogger(PlayroomFilter.class);
 
     private static List<String> validParams;
 
@@ -79,16 +83,16 @@ public abstract class PlayroomFilter {
     // prints list of toys in the room
     public static void showToys(List<Toy> toys) {
         for (Toy toy : toys) {
-            System.out.println(toy);
+            logger.info(toy);
         }
     }
 
     private static void wrongParamMessage() {
-        System.out.println("wrong parameter");
+        logger.info("wrong parameter");
     }
 
     private static void wrongParamMessage(String param) {
-        System.out.println("wrong parameter: " + param);
+        logger.info("wrong parameter: " + param);
     }
 
     static {

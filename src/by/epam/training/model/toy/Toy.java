@@ -8,6 +8,8 @@
 
 package by.epam.training.model.toy;
 
+import org.apache.log4j.Logger;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -15,6 +17,8 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Toy {
+
+    private static final Logger logger = Logger.getLogger(Toy.class);
 
     private static Map<String, Double> prices;
 
@@ -121,7 +125,8 @@ public class Toy {
                 }
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            logger.error("prices file not found: ", e);
+            System.exit(-1);
         }
     }
 }

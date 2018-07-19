@@ -1,0 +1,40 @@
+
+02:16:24,320 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+02:16:27,628 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+02:16:48,870 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+02:18:01,336 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
