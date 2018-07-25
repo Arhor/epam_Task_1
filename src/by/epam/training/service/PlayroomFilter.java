@@ -30,7 +30,7 @@ import java.util.stream.Collectors;
 
 public abstract class PlayroomFilter {
 
-    private static final Logger logger = Logger.getLogger(PlayroomFilter.class);
+    private static final Logger LOGGER = Logger.getLogger(PlayroomFilter.class);
 
     private static List<String> validParams;
 
@@ -83,16 +83,16 @@ public abstract class PlayroomFilter {
     // prints list of toys in the room
     public static void showToys(List<Toy> toys) {
         for (Toy toy : toys) {
-            logger.info(toy);
+            LOGGER.info(toy);
         }
     }
 
     private static void wrongParamMessage() {
-        logger.info("wrong parameter");
+        LOGGER.info("wrong parameter");
     }
 
     private static void wrongParamMessage(String param) {
-        logger.info("wrong parameter: " + param);
+        LOGGER.info("wrong parameter: " + param);
     }
 
     static {

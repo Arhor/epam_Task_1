@@ -18,7 +18,7 @@ import java.util.Scanner;
 
 public class Toy {
 
-    private static final Logger logger = Logger.getLogger(Toy.class);
+    private static final Logger LOGGER = Logger.getLogger(Toy.class);
 
     private static Map<String, Double> prices;
 
@@ -125,7 +125,7 @@ public class Toy {
                 }
             }
         } catch (FileNotFoundException e) {
-            logger.error("prices file not found: ", e);
+            LOGGER.error("prices file not found: ", e);
             System.exit(-1);
         }
     }

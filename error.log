@@ -38,3 +38,156 @@ java.io.FileNotFoundException: prices.txt (Не удается найти ука
 	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
 	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
 	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+12:09:38,913 DEBUG main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+
+12:14:35,832 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+12:36:24,315 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+12:43:07,384 ERROR main [ErrorLogger]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+12:45:05,456 ERROR main [ErrorLogger]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+13:08:48,217  INFO main [Runner]:main:16 - Enter money sum, that will be used to fill the playroom: 
+
+13:09:02,912  INFO main [Runner]:main:16 - Enter money sum, that will be used to fill the playroom: 
+
+13:09:47,780  INFO main [Runner]:main:16 - Enter money sum, that will be used to fill the playroom: 
+
+13:10:21,840  INFO main [Runner]:main:21 - Wrong number format, playroom will be filled automatically
+
+13:10:21,845 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+13:14:29,722  INFO main [Runner]:main:16 - Enter money sum, that will be used to fill the playroom: 
+
+13:14:35,227  INFO main [Runner]:main:21 - Wrong number format, playroom will be filled automatically
+
+13:14:35,232 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+13:16:10,479  INFO main [Runner]:main:16 - Enter money sum, that will be used to fill the playroom: 
+
+13:16:41,470  INFO main [Runner]:main:16 - Enter money sum, that will be used to fill the playroom: 
+
+13:16:51,905  INFO main [Runner]:main:21 - Wrong number format, playroom will be filled automatically
+
+13:16:51,910 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+13:17:04,448  INFO main [Runner]:main:16 - Enter money sum, that will be used to fill the playroom: 
+
+13:17:07,849  INFO main [Runner]:main:21 - Wrong number format, playroom will be filled automatically
+
+13:17:07,855 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+13:18:47,657 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+13:20:56,873 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+13:22:13,779 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+13:23:05,237 ERROR main [Toy]:<clinit>:128 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
+	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
+	at by.epam.training.runner.Runner.main(Runner.java:25)
