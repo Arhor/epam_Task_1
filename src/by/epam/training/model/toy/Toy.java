@@ -56,23 +56,6 @@ public class Toy {
         return this.price;
     }
 
-    public static void initializePrices() throws InitializeException {
-        prices = new HashMap<>();
-        File file = new File("prices.txt");
-        try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNext()) {
-                String temp = scanner.nextLine();
-                if(temp.matches("\\w+=[0-9]+(\\.[0-9])?")) {
-                    String str = temp.replaceAll("[^a-zA-Z]", "");
-                    Double num = Double.valueOf(temp.replaceAll("\\w+=",""));
-                    prices.put(str, num);
-                }
-            }
-        } catch (FileNotFoundException e) {
-            throw new InitializeException("prices file not found: ", e);
-        }
-    }
-
     // returns instance of Toy class with randomly initialized fields
     public static Toy getInstance() {
         Toy toy = new Toy();
@@ -116,21 +99,7 @@ public class Toy {
         return toy;
     }
 
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + "@"
-                + "size: " + getSize()
-                + ", type: " + getType()
-                + ", color: " + getColor()
-                + ", price: " + getPrice();
-    }
-
-    /*
-     *  at the moment of first instantiation Toy object, following block
-     *  tries to read prices from "priced.txt" file and add them
-     *  to static hash-map "prices"
-     */
-    /*static {
+    public static void initializePrices() throws InitializeException {
         prices = new HashMap<>();
         File file = new File("prices.txt");
         try (Scanner scanner = new Scanner(file)) {
@@ -143,8 +112,16 @@ public class Toy {
                 }
             }
         } catch (FileNotFoundException e) {
-            LOGGER.error("prices file not found: ", e);
-            System.exit(-1);
+            throw new InitializeException("prices file not found: ", e);
         }
-    }*/
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "@ "
+                + String.format("size: %6s," +
+                " type: %4s," +
+                " color: %5s," +
+                " price: %4.1f", getSize(), getType(), getColor(), getPrice());
+    }
 }

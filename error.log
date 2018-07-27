@@ -275,3 +275,19 @@ Caused by: java.io.FileNotFoundException: prices.txt (Не удается най
 	at java.util.Scanner.<init>(Scanner.java:611)
 	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:62)
 	... 2 more
+
+23:28:14,476 ERROR main [Runner]:main:23 - java.lang.NumberFormatException: For input string: "q"
+
+23:30:10,471 ERROR main [Runner]:main:23 - message
+java.lang.NumberFormatException: For input string: "gggg"
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.lang.Double.parseDouble(Double.java:538)
+	at by.epam.training.runner.Runner.main(Runner.java:20)
+
+23:30:57,892 ERROR main [Runner]:main:23 - invalid user's input
+java.lang.NumberFormatException: For input string: "dsfg"
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.lang.Double.parseDouble(Double.java:538)
+	at by.epam.training.runner.Runner.main(Runner.java:20)

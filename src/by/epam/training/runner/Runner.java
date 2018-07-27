@@ -18,10 +18,14 @@ public class Runner {
                 " fill the playroom: ");
         try {
             pr = new Playroom(Double.parseDouble(scanner.nextLine()));
+        } catch (NumberFormatException e) {
+            LOGGER.info("wrong number format!");
+            LOGGER.error("invalid user's input:", e);
+            return;
         } catch (CreationException e) {
             LOGGER.info("An error occurred, application will be closed");
             LOGGER.error("error occurred during" +
-                    " playroom instantiation: ", e);
+                    " playroom instantiation:", e);
             return;
         }
         pr.buyToys();
@@ -43,8 +47,8 @@ public class Runner {
                     break;
                 case "3":
                     LOGGER.info("parameters to find toys by:\n" +
-                            "\tsize: small, medium, large\n" +
-                            "\ttype: car, doll, cube, ball\n" +
+                            "\t size: small, medium, large\n" +
+                            "\t type: car, doll, cube, ball\n" +
                             "\tcolor: red, green, blue");
                     PlayroomFilter.findToys(pr, scanner.nextLine());
                     break;
