@@ -8,6 +8,7 @@
 
 package by.epam.training.model.toy;
 
+import by.epam.training.exception.InitializeException;
 import org.apache.log4j.Logger;
 
 import java.io.File;
@@ -53,6 +54,23 @@ public class Toy {
 
     public double getPrice() {
         return this.price;
+    }
+
+    public static void initializePrices() throws InitializeException {
+        prices = new HashMap<>();
+        File file = new File("prices.txt");
+        try (Scanner scanner = new Scanner(file)) {
+            while (scanner.hasNext()) {
+                String temp = scanner.nextLine();
+                if(temp.matches("\\w+=[0-9]+(\\.[0-9])?")) {
+                    String str = temp.replaceAll("[^a-zA-Z]", "");
+                    Double num = Double.valueOf(temp.replaceAll("\\w+=",""));
+                    prices.put(str, num);
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new InitializeException("prices file not found: ", e);
+        }
     }
 
     // returns instance of Toy class with randomly initialized fields
@@ -112,7 +130,7 @@ public class Toy {
      *  tries to read prices from "priced.txt" file and add them
      *  to static hash-map "prices"
      */
-    static {
+    /*static {
         prices = new HashMap<>();
         File file = new File("prices.txt");
         try (Scanner scanner = new Scanner(file)) {
@@ -128,5 +146,5 @@ public class Toy {
             LOGGER.error("prices file not found: ", e);
             System.exit(-1);
         }
-    }
+    }*/
 }

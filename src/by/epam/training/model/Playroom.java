@@ -11,6 +11,8 @@ package by.epam.training.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import by.epam.training.exception.CreationException;
+import by.epam.training.exception.InitializeException;
 import by.epam.training.model.toy.Toy;
 
 public class Playroom {
@@ -21,12 +23,14 @@ public class Playroom {
 
     private double totalPrice;
 
-    public Playroom(double currency) {
+    public Playroom(double currency) throws CreationException {
         this.currency = currency;
-    }
+        try {
+            Toy.initializePrices();
+        } catch (InitializeException e) {
+            throw new CreationException("field to create playroom: ",e);
+        }
 
-    public Playroom() {
-        this(500);
     }
 
     // adding toys to the playroom while there is enough cash

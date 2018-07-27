@@ -1,5 +1,6 @@
 package by.epam.training.runner;
 
+import by.epam.training.exception.CreationException;
 import by.epam.training.model.Playroom;
 import by.epam.training.service.PlayroomFilter;
 import java.util.Scanner;
@@ -17,10 +18,11 @@ public class Runner {
                 " fill the playroom: ");
         try {
             pr = new Playroom(Double.parseDouble(scanner.nextLine()));
-        } catch (NumberFormatException e) {
-            LOGGER.info("Wrong number format, playroom will be " +
-                    "filled automatically");
-            pr = new Playroom();
+        } catch (CreationException e) {
+            LOGGER.info("An error occurred, application will be closed");
+            LOGGER.error("error occurred during" +
+                    " playroom instantiation: ", e);
+            return;
         }
         pr.buyToys();
         if (pr.isEmpty()) {

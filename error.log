@@ -191,3 +191,87 @@ java.io.FileNotFoundException: prices.txt (Не удается найти ука
 	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:118)
 	at by.epam.training.model.Playroom.buyToys(Playroom.java:35)
 	at by.epam.training.runner.Runner.main(Runner.java:25)
+
+21:06:11,764 ERROR main [Toy]:<clinit>:146 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:136)
+	at by.epam.training.model.Playroom.<init>(Playroom.java:28)
+	at by.epam.training.runner.Runner.main(Runner.java:20)
+
+22:59:35,989 ERROR main [Toy]:<clinit>:146 - prices file not found: 
+java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.<clinit>(Toy.java:136)
+	at by.epam.training.model.Playroom.<init>(Playroom.java:29)
+	at by.epam.training.runner.Runner.main(Runner.java:20)
+
+23:00:19,357 ERROR main [Runner]:main:23 - en error occurred: 
+by.epam.training.exception.CreationException: field to create playroom: 
+	at by.epam.training.model.Playroom.<init>(Playroom.java:31)
+	at by.epam.training.runner.Runner.main(Runner.java:20)
+Caused by: by.epam.training.exception.InitializeException: prices file not found: 
+	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:72)
+	at by.epam.training.model.Playroom.<init>(Playroom.java:29)
+	... 1 more
+Caused by: java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:62)
+	... 2 more
+
+23:01:14,700 ERROR main [Runner]:main:22 - en error occurred: 
+by.epam.training.exception.CreationException: field to create playroom: 
+	at by.epam.training.model.Playroom.<init>(Playroom.java:31)
+	at by.epam.training.runner.Runner.main(Runner.java:20)
+Caused by: by.epam.training.exception.InitializeException: prices file not found: 
+	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:72)
+	at by.epam.training.model.Playroom.<init>(Playroom.java:29)
+	... 1 more
+Caused by: java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:62)
+	... 2 more
+
+23:03:23,089 ERROR main [Runner]:main:23 - en error occurred: 
+by.epam.training.exception.CreationException: field to create playroom: 
+	at by.epam.training.model.Playroom.<init>(Playroom.java:31)
+	at by.epam.training.runner.Runner.main(Runner.java:20)
+Caused by: by.epam.training.exception.InitializeException: prices file not found: 
+	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:72)
+	at by.epam.training.model.Playroom.<init>(Playroom.java:29)
+	... 1 more
+Caused by: java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:62)
+	... 2 more
+
+23:05:28,781 ERROR main [Runner]:main:23 - error occurred during playroom instantiation: 
+by.epam.training.exception.CreationException: field to create playroom: 
+	at by.epam.training.model.Playroom.<init>(Playroom.java:31)
+	at by.epam.training.runner.Runner.main(Runner.java:20)
+Caused by: by.epam.training.exception.InitializeException: prices file not found: 
+	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:72)
+	at by.epam.training.model.Playroom.<init>(Playroom.java:29)
+	... 1 more
+Caused by: java.io.FileNotFoundException: prices.txt (Не удается найти указанный файл)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.util.Scanner.<init>(Scanner.java:611)
+	at by.epam.training.model.toy.Toy.initializePrices(Toy.java:62)
+	... 2 more
